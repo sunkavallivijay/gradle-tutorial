@@ -7,15 +7,30 @@
 
 plugins {
     //This is same as id('java')
-    id 'java'
+//    id 'java'
+
+    //One can use this plugin instead of java which helps Runs this project as a JVM application by default
+    //This add java plugin implicitly
+    id 'application'
 }
 
+//Tells which class is the Main class and this is configured when plugin is java
 jar{
     manifest {
         //Note the parenthesis and arguments passed is a map-key:value
         //This is same as attributes 'Main-class':'com.example.tutorial.GradleTutorial'
         attributes('Main-class':'com.example.tutorial.GradleTutorial')
     }
+
+    //Builds fat jar that includes all required dependency jar classes
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+//Tells which class is the Main class and this is configured when plugin is application
+application {
+    mainClass="com.example.tutorial.GradleTutorial"
 }
 
 repositories {
@@ -24,6 +39,7 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.13.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 

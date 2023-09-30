@@ -27,6 +27,7 @@ gradlew tasks - list all tasks
 *How project is created:*   
 - Started the project creation by running `gradle init`. Chosen options it has given.
 - Then updated build.gradle file with required tasks for the present simple java project
+- Then added src/main/java and src/test/java folders and added simple java file
 - Then added testing with junit5
 - This also list all Gradle tasks programatically written in build.gradle
 - Explored tasks creation, println and groovy syntax i.e. parenthesis, closures
@@ -40,7 +41,11 @@ gradlew tasks - list all tasks
 - Then added and committed the files and pushed `git push origin master`
 - Git asks for credential manager to use. Add token here when prompted.
 
-
+*Build fat jar:*
+- Add`from {
+  configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+  }` to copy classpath to the jar 
+- 
 References:
 - https://www.youtube.com/watch?v=-dtcEMLNmn0
 - https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github
