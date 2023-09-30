@@ -45,6 +45,14 @@ gradlew tasks - list all tasks
 - Add`from {
   configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
   }` to copy classpath to the jar 
+
+*//TODO - Multi-module projects:*   
+- Build 2 modules
+- Apply common gradle settings
+- Apply common gradle build configs
+- Build each module independent and together
+- Move dependencies to external dependencies file and immport
+- https://www.youtube.com/watch?v=pSKY3-K9_qc
 - 
 References:
 - https://www.youtube.com/watch?v=-dtcEMLNmn0
