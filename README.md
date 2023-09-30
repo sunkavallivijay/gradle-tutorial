@@ -11,10 +11,10 @@ Gradle has 3 main thigns:
 *Hierarchy:*   
 Project ->  Build script -> Tasks  & plugins
 
-gradlew tasks
-plugins help with adding new common tasks that many generally use
+gradlew tasks - list all tasks   
+*plugins* help with adding new common tasks that many generally use; extends gradle core capabilities
 
-Important things about groovy used by Gradle:   
+*Important things about groovy used by Gradle:*   
 	1. Parenthesis after method are optional unless there are no arguments in which case they are required   
        - So id 'java' and id('java') both are same   
 	2. Everything is a class and method and the start is org.gradle.api.Project class [https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html]   
@@ -24,20 +24,23 @@ Important things about groovy used by Gradle:
 		- Again above line is same as attributes 'Main-class':'com.example.tutorial.GradleTutorial'  
 		- ap is created without having to use new keyword here  
 
-Started the project creation by running `gradle init`. Chosen options it has given.
-Then updated build.gradle file with required tasks for the present simple java project
-Then added testing with junit5
-This also list all Gradle tasks programatically written in build.gradle
-Explored tasks creation, println and groovy syntax i.e. parenthesis, closures
+*How project is created:*   
+- Started the project creation by running `gradle init`. Chosen options it has given.
+- Then updated build.gradle file with required tasks for the present simple java project
+- Then added testing with junit5
+- This also list all Gradle tasks programatically written in build.gradle
+- Explored tasks creation, println and groovy syntax i.e. parenthesis, closures
 
-**To push to git:**
+*To push to git:*
 - Created a new repo with same name as project name on github.com
 - In local ran `git init`
-- configured git in local with username, email and above created repo url`git remote add origin <REMOTE_URL>`
-- Created personal token
-- Then committed the files and pushed `git push origin master`
+- configured git in local with username, email; this is a must
+- Added repo url`git remote add origin <REMOTE_URL>`
+- Created personal token on github.com
+- Then added and committed the files and pushed `git push origin master`
+- Git asks for credential manager to use. Add token here when prompted.
 
 
 References:
-https://www.youtube.com/watch?v=-dtcEMLNmn0
-
+- https://www.youtube.com/watch?v=-dtcEMLNmn0
+- https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github

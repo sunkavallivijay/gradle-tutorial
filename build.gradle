@@ -6,16 +6,20 @@
  */
 
 plugins {
+    //This is same as id('java')
     id 'java'
 }
 
 jar{
     manifest {
+        //Note the parenthesis and arguments passed is a map-key:value
+        //This is same as attributes 'Main-class':'com.example.tutorial.GradleTutorial'
         attributes('Main-class':'com.example.tutorial.GradleTutorial')
     }
 }
 
 repositories {
+    //Zero arguments so parenthesis are required
     mavenCentral()
 }
 
